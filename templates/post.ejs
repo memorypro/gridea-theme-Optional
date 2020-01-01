@@ -1,45 +1,75 @@
 <html>
-  <head>
-    <script src="../../prism.js" ></script>
-    <link href="../../prism.css" rel="stylesheet" />
-      <%- include('./_blocks/head', { siteTitle: themeConfig.siteName }) %>
 
-  </head>
-  <body>
-    <div class="head-top-line"></div>
-    <div class="header-box">
-      <%- include('./_blocks/header', {active: false}) %>
-    </div>
-    <div class="main-continer">
-      <div class="section-layout">
-        <div class="section-layout-wrapper">
-         
-          <!-- <div class="section-box"> -->
-            <div class="section post">
-              <section class="section-items">
-                <%- include('./_blocks/article') %>
-              <div class="post-body" id="post_body">
-                <%- post.content %>
-              </div>
-              <%- include('./_blocks/post-footer') %>
-              <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
-                <% if (commentSetting.commentPlatform === 'gitalk') { %>
-                  <%- include('./_blocks/gitalk') %>
-                <% } %>
-                <% if (commentSetting.commentPlatform === 'disqus') { %>
-                  <%- include('./_blocks/disqus') %>
-                <% } %>
-              <% } %>
-              </section>
-             
-            </div>
-            <%- include('./_blocks/home-sidebar') %>
-            <!-- <%- include('./_blocks/post-sidebar', {toc: post.toc}) %> -->
-          <!-- </div> -->
-        </div>
-      </div>
-      <%- include('./_blocks/footer') %>
-    </div>
-  </body>
-  <script src="/media/js/motion.js"></script>
+<head>
+	<script src="../../prism.js"></script>
+	<link href="../../prism.css" rel="stylesheet" />
+	<%- include('./_blocks/head', { siteTitle: themeConfig.siteName }) %>
+
+</head>
+
+<body>
+	<div class="head-top-line"></div>
+	<div class="header-box">
+		<%- include('./_blocks/header', {active: false}) %>
+	</div>
+	<div class="main-continer">
+		<div class="section-layout">
+			<div class="section-layout-wrapper">
+
+				<!-- <div class="section-box"> -->
+				<div class="section post">
+					<section class="section-items">
+						<%- include('./_blocks/article') %>
+						<div class="post-body" id="post_body">
+							<%- post.content %>
+						</div>
+						<%- include('./_blocks/post-footer') %>
+						<% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+						<% if (commentSetting.commentPlatform === 'gitalk') { %>
+						<%- include('./_blocks/gitalk') %>
+						<% } %>
+						<% if (commentSetting.commentPlatform === 'disqus') { %>
+						<%- include('./_blocks/disqus') %>
+						<% } %>
+						<% } %>
+						<div class="comment"></div>
+					</section>
+
+				</div>
+				<%- include('./_blocks/home-sidebar') %>
+				<!-- <%- include('./_blocks/post-sidebar', {toc: post.toc}) %> -->
+				<!-- </div> -->
+			</div>
+
+		</div>
+		<%- include('./_blocks/footer') %>
+
+	</div>
+	<!--载入js，在</body>之前插入即可-->
+	<!--Leancloud 操作库:-->
+	<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+	<!--Valine 的核心代码库-->
+	<script src="/media/scripts/Valine.min.js"></script>
+
+	<script>
+		
+		var uid = '<%=site.customConfig.VlineAppID%>' 
+		var ukey = '<%=site.customConfig.VlineAppKey%>' 
+		new Valine({
+			// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+			av: AV,
+			el: '.comment',
+			lang: 'zh-cn',//设置评论语言
+			emoticon_url: 'https://cloud.panjunwen.com/alu',
+			emoticon_list: ["狂汗.png", "不说话.png", "汗.png", "坐等.png", "献花.png", "不高兴.png", "中刀.png", "害羞.png", "皱眉.png", "小眼睛.png", "暗地观察.png"],
+			//app_id: 'GpH0RkcKw0qkhgH6ug4o5FPe-gzGzoHsz',
+			app_id:uid,
+			app_key: ukey,
+			placeholder: '评论留言'
+		});
+	</script>
+
+</body>
+<script src="/media/js/motion.js"></script>
+
 </html>

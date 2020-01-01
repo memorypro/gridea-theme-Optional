@@ -154,6 +154,22 @@
       "note": "链接地址"
     },
     {
+      "name": "VlineAppID",
+      "label": "VlineAppID",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "VlineAppID"
+    },
+    {
+      "name": "VlineAppKey",
+      "label": "VlineAppID",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "VlineAppKey"
+    },
+    {
       "name": "customCss",
       "label": "自定义CSS",
       "group": "自定义样式",

@@ -2,7 +2,7 @@
   "name": "Optional",
   "version": "0.0.1",
   "author": "Memory",
-  "repository": "https://github.com/hsxyhao/gridea-theme-next",
+  "repository": "https://github.com/memorypro/gridea-theme-Optional",
   "customConfig": [
     {
       "name": "contentMaxWidth",

@@ -1,0 +1,29 @@
+<html>
+  <head>
+      <%- include('./_blocks/head', { siteTitle: themeConfig.siteName }) %>
+  </head>
+  <body>
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      <%- include('./_blocks/header', {active: false}) %>
+    </div>
+    <div class="main-continer">
+      <div class="section-layout">
+        <div class="section-layout-wrapper">
+          
+          <!-- <div class="section-box"> -->
+            <section class="section posts-expand">
+              <section class="section-items">
+                <%- include('./_blocks/tag-timeline') %>
+              </section>
+             
+            </section>
+            <%- include('./_blocks/home-sidebar') %>
+          <!-- </div> -->
+        </div>
+      </div>
+      <%- include('./_blocks/footer') %>
+    </div>
+  </body>
+  <script src="/media/js/motion.js"></script>
+</html>

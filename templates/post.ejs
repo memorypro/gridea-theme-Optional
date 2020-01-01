@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="../../prism.js" ></script>
+    <link href="../../prism.css" rel="stylesheet" />
+      <%- include('./_blocks/head', { siteTitle: themeConfig.siteName }) %>
+
+  </head>
+  <body>
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      <%- include('./_blocks/header', {active: false}) %>
+    </div>
+    <div class="main-continer">
+      <div class="section-layout">
+        <div class="section-layout-wrapper">
+         
+          <!-- <div class="section-box"> -->
+            <div class="section post">
+              <section class="section-items">
+                <%- include('./_blocks/article') %>
+              <div class="post-body" id="post_body">
+                <%- post.content %>
+              </div>
+              <%- include('./_blocks/post-footer') %>
+              <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+                <% if (commentSetting.commentPlatform === 'gitalk') { %>
+                  <%- include('./_blocks/gitalk') %>
+                <% } %>
+                <% if (commentSetting.commentPlatform === 'disqus') { %>
+                  <%- include('./_blocks/disqus') %>
+                <% } %>
+              <% } %>
+              </section>
+             
+            </div>
+            <%- include('./_blocks/home-sidebar') %>
+            <!-- <%- include('./_blocks/post-sidebar', {toc: post.toc}) %> -->
+          <!-- </div> -->
+        </div>
+      </div>
+      <%- include('./_blocks/footer') %>
+    </div>
+  </body>
+  <script src="/media/js/motion.js"></script>
+</html>

@@ -1,0 +1,49 @@
+<header class="header">
+ 
+    <div class="blog-header" id="header">
+      <div class="section-layout-wrapper">
+      <div class="site-meta">
+        <div class="nav-toggle" id="nav_toggle">
+          <div class="toggle-box">
+            <div class="line line-top"></div>
+            <div class="line line-center"></div>
+            <div class="line line-bottom"></div>
+          </div>
+        </div>
+        <div class="site-title">
+          <a href="/" class="brand">
+            <span><%= themeConfig.siteName %></span>
+          </a>
+        </div>
+        <p class="subtitle"></p>
+        <nav class="site-nav" id="site_nav">
+              <% menus.forEach(function(menu) { %>
+                <li class="nav-item <%= active&&menu === 'home' ?'nav-item-active':'' %>">
+                  <a href="<%= menu.link %>">
+                    <!-- <i class="iconfont icon-home"></i> -->
+                    <%=menu.name %>
+                  </a>
+                </li>
+              <% }); %>
+        </nav>
+  
+      </div>
+    
+    </div>
+  </div>
+ 
+</header>
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>

@@ -5,22 +5,6 @@
   "repository": "https://github.com/memorypro/gridea-theme-Optional",
   "customConfig": [
     {
-      "name": "contentMaxWidth",
-      "label": "内容区最大宽度",
-      "group": "布局",
-      "value": "800px",
-      "type": "input",
-      "note": "可填像素类型（如：320px）或百分比类型（如：38.2%）"
-    },
-    {
-      "name": "textSize",
-      "label": "正文内容文字大小",
-      "group": "布局",
-      "value": "16px",
-      "type": "input",
-      "note": "px 或 rem（如 16px 或 1rem）"
-    },
-    {
       "name": "titleAlign",
       "label": "标题对齐",
       "group": "布局",
@@ -156,15 +140,15 @@
     {
       "name": "VlineAppID",
       "label": "VlineAppID",
-      "group": "社交",
+      "group": "评论",
       "value": "",
       "type": "input",
       "note": "VlineAppID"
     },
     {
       "name": "VlineAppKey",
-      "label": "VlineAppID",
-      "group": "社交",
+      "label": "VlineAppKey",
+      "group": "评论",
       "value": "",
       "type": "input",
       "note": "VlineAppKey"
@@ -179,11 +163,27 @@
     },
     {
       "name": "ga",
-      "label": "跟踪 ID",
-      "group": "谷歌统计",
+      "label": "谷歌统计 跟踪 ID",
+      "group": "统计",
       "value": "",
       "type": "input",
       "note": "UA-xxxxxxxxx-x"
+    },
+    {
+      "name": "baidutongji",
+      "label": "百度统计JS代码",
+      "group": "统计",
+      "value": "",
+      "type": "textarea",
+      "note": "百度统计JS代码"
+    },
+    {
+      "name": "baidutijiao",
+      "label": "百度SEO主动推送代码",
+      "group": "统计",
+      "value": "",
+      "type": "textarea",
+      "note": "百度统计JS代码"
     }
   ]
 }

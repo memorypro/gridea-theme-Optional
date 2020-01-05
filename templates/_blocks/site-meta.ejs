@@ -33,7 +33,7 @@
   </div>
   <div class="sidebar-item sidebar-item-social">
     <div class="social-item">
-      <a href="https://www.github.com/hsxyhao">
+      <a href="https://www.github.com/memorypro">
         <i class="iconfont icon-github"></i> GitHub
       </a>
       <a href="">
@@ -65,6 +65,34 @@
         </li>
 
       <% }); %>
+    </ul>
+     
+  </div>
+
+</div>
+
+
+<div class="sidebar-wrapper">
+  <div class="sidebar-item">
+    <p class="site-author-name">友情链接</p>
+  </div>
+  <div class="social-item">
+    <ul style=" list-style: none; margin-left: -10px;" >
+    
+      <% site.tags.forEach(function(tag) { %>
+        <li >
+          <a  href="<%= tag.link %>">
+            <%=tag.name %>
+          </a>
+        </li>
+
+      <% }); %>
+
+      <li > <a  href="">链接1</a></li>
+      <li > <a  href="">链接1</a></li>
+      <li > <a  href="">链接1</a></li>
+      <li > <a  href="">链接1</a></li>
+
     </ul>
      
   </div>
